@@ -1,7 +1,7 @@
 import { Component } from "react";
-import { Card, Col } from "react-bootstrap";
+import { Card, Button, Col } from "react-bootstrap";
 
-class MyMainContent extends Component {
+class MyAnime extends Component {
 	componentDidMount() {
 		this.getMovies();
 	}
@@ -10,7 +10,9 @@ class MyMainContent extends Component {
 		movies: [],
 	};
 	getMovies = () => {
-		fetch(" http://www.omdbapi.com/?i=tt3896198&apikey=d901781a&s=Harry Potter")
+		fetch(
+			" http://www.omdbapi.com/?i=tt3896198&apikey=d901781a&s=Tokyo Ghoul"
+		)
 			.then((response) => {
 				if (response.ok) {
 					return response.json();
@@ -38,20 +40,16 @@ class MyMainContent extends Component {
 							xs={12}
 							md={4}
 							lg={3}
-                            className="mb-5"
 						>
-							<Card key={movie.imdbID}
-                            className="CardStyle">
+							<Card key={movie.imdbID} ClassName="CardStyle">
 								<Card.Img
 									variant="top"
-									src={movie.Poster
-                                     
-                                    }
+									src={movie.Poster}
 								/>
 								<Card.Body>
 									<Card.Title>{movie.Title}</Card.Title>
 									<Card.Text>{movie.Year}</Card.Text>
-								
+									<Button variant="primary">Watch me!</Button>
 								</Card.Body>
 							</Card>
 						</Col>
@@ -62,4 +60,4 @@ class MyMainContent extends Component {
 	}
 }
 
-export default MyMainContent;
+export default MyAnime;

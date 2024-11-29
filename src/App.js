@@ -5,6 +5,9 @@ import MyNavbar from "./Components/MyNavbar";
 import MyFooter from "./Components/MyFooter";
 import MyMainContent from "./Components/MyMainContent";
 import { Container, Row } from "react-bootstrap";
+import MyAnime from "./Components/MyAnime";
+import MySeries from "./Components/MySeries";
+
 
 function App() {
 	return (
@@ -12,10 +15,16 @@ function App() {
 			<header className="App-header">
 				<MyNavbar />
 			</header>
-			<main>
+			<main className="bg-dark">
       <Container>
         <Row>
         <MyMainContent />
+        </Row>
+        <Row>
+        <MyAnime />
+        </Row>
+        <Row>
+        <MySeries />
         </Row>
         </Container>
       </main>

@@ -5,7 +5,7 @@ const MyNavbar = function () {
 		<Navbar
 			collapseOnSelect
 			expand="md"
-			className="bg-dark align-items-start"
+			className="bg-dark align-items-start pb-5"
 			data-bs-theme="dark"
 		>
 			<Container fluid>
