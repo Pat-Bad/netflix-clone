@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Card, Col, Alert, Spinner } from "react-bootstrap";
+import { Card, Col, Alert } from "react-bootstrap";
 
 class MySeries extends Component {
 	componentDidMount() {
@@ -8,8 +8,7 @@ class MySeries extends Component {
 
 	state = {
 		movies: [],
-        isError: false,
-		isLoading: true,
+		isError: false,
 	};
 	getMovies = () => {
 		fetch(" http://www.omdbapi.com/?i=tt3896198&apikey=d901781a&s=Sense8")
@@ -23,27 +22,24 @@ class MySeries extends Component {
 
 			.then((data) => {
 				console.log("Ecco la lista", data);
-				this.setState({ movies: data.Search, isLoading: false });
+				this.setState({ movies: data.Search });
 			})
 
 			.catch((err) => {
 				console.log("Errore!", err);
-                this.setState({
-					isError:true,
-					isLoading:false
-				})
+				this.setState({
+					isError: true,
+				});
 			});
 	};
 
 	render() {
 		return (
 			<>
-            {this.state.isError && (
+				{this.state.isError && (
 					<Alert variant="warning">Sorry... Something went wrong 🤔</Alert>
 				)}
-                {this.state.isLoading && (<Spinner animation="border" role="status">
-      <span className="visually-hidden">Loading...</span>
-    </Spinner>)}
+
 				{this.state.movies.map((movie) => {
 					return (
 						<Col
@@ -58,6 +54,7 @@ class MySeries extends Component {
 							>
 								<Card.Img
 									variant="top"
+                                    className="h-75"
 									src={movie.Poster}
 								/>
 								<Card.Body className="pt-2 p-0 text-light text-center align-content-center px-2 Pumpkin-latte">

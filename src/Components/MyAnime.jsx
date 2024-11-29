@@ -1,5 +1,5 @@
 import { Component } from "react";
-import { Card, Col, Alert, Spinner } from "react-bootstrap";
+import { Card, Col, Alert } from "react-bootstrap";
 
 class MyAnime extends Component {
 	componentDidMount() {
@@ -9,7 +9,6 @@ class MyAnime extends Component {
 	state = {
 		movies: [],
 		isError: false,
-		isLoading: true,
 	};
 	getMovies = () => {
 		fetch(" http://www.omdbapi.com/?i=tt3896198&apikey=d901781a&s=Tokyo Ghoul")
@@ -23,16 +22,14 @@ class MyAnime extends Component {
 
 			.then((data) => {
 				console.log("Ecco la lista", data);
-				this.setState({ movies: data.Search, isLoading: false });
+				this.setState({ movies: data.Search });
 			})
 
 			.catch((err) => {
-				console.log("Errore!", err)
+				console.log("Errore!", err);
 				this.setState({
-					isError:true,
-					isLoading:false
-				})
-				
+					isError: true,
+				});
 			});
 	};
 
@@ -42,21 +39,14 @@ class MyAnime extends Component {
 				{this.state.isError && (
 					<Alert variant="warning">Sorry... Something went wrong 🤔</Alert>
 				)}
-				{this.state.isLoading && (
-					<Spinner
-						animation="border"
-						role="status"
-					>
-						<span className="visually-hidden">Loading...</span>
-					</Spinner>
-				)}
+
 				{this.state.movies.map((movie) => {
 					return (
 						<Col
 							xs={12}
 							md={4}
 							lg={3}
-							className="mb-5"
+							className="mb-5 mt-5"
 						>
 							<Card
 								key={movie.imdbID}
@@ -65,6 +55,7 @@ class MyAnime extends Component {
 								<Card.Img
 									variant="top"
 									src={movie.Poster}
+									className="h-75"
 								/>
 								<Card.Body className="pt-2 p-0 text-light text-center align-content-center px-2 Pumpkin-latte ">
 									<Card.Title className="small">

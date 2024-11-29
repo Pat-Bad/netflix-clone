@@ -7,6 +7,8 @@ import MyMainContent from "./Components/MyMainContent";
 import { Container, Row } from "react-bootstrap";
 import MyAnime from "./Components/MyAnime";
 import MySeries from "./Components/MySeries";
+import MyProfile from "./Components/MyProfile";
+import MySettings from "./Components/MySettings";
 
 
 function App() {
@@ -31,6 +33,8 @@ function App() {
 			<footer>
 				<MyFooter />
 			</footer>
+      <section><MyProfile/>
+      <MySettings/></section>
 		</div>
 	);
 }

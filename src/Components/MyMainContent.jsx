@@ -43,7 +43,7 @@ class MyMainContent extends Component {
 				{this.state.isError && (
 					<Alert variant="warning">Sorry... Something went wrong 🤔</Alert>
 				)}
-                {this.state.isLoading && (<Spinner animation="border" role="status">
+                {this.state.isLoading && (<Spinner animation="border" role="status" className="mb-3 LittleSage">
       <span className="visually-hidden">Loading...</span>
     </Spinner>)}
 				{this.state.movies.map((movie) => {
@@ -56,10 +56,11 @@ class MyMainContent extends Component {
 						>
 							<Card
 								key={movie.imdbID}
-								className="h-100"
+								className="h-100 mt-5"
 							>
 								<Card.Img
 									variant="top"
+                                    className="h-75"
 									src={movie.Poster}
 								/>
 								<Card.Body className="pt-2 p-0 text-light text-center align-content-center px-2 Pumpkin-latte">

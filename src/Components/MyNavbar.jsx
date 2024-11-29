@@ -5,11 +5,17 @@ const MyNavbar = function () {
 		<Navbar
 			collapseOnSelect
 			expand="md"
-			className="Sage align-items-start pb-5"
+			className="Pumpkin-latte align-items-start pb-0 border border-1 border-dark-subtle"
 			data-bs-theme="light"
 		>
 			<Container fluid>
-				<Navbar.Brand href="#home">Netflix</Navbar.Brand>
+				<Navbar.Brand href="#home"><img
+              src="https://i.pinimg.com/originals/db/c1/03/dbc1037d045817a9c46b9ad080fbd3cc.jpg"   //messa da URL, non riesco a visualizzare file caricati in svg o png.......
+              width="30"
+              height="30"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            /></Navbar.Brand>
 				<Navbar.Toggle aria-controls="responsive-navbar-nav" />
 				<Navbar.Collapse id="responsive-navbar-nav">
 					<Nav className="ms-auto">
