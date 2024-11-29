@@ -4,7 +4,7 @@ const MyFooter = function () {
 	return (
 		<ListGroup
 			variant="flush"
-			className="bg-dark"
+			
             data-bs-theme="dark"
 		>
 			<ListGroup.Item>Contact Us</ListGroup.Item>

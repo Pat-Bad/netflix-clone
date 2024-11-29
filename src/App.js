@@ -33,8 +33,8 @@ function App() {
 			<footer>
 				<MyFooter />
 			</footer>
-      <section><MyProfile/>
-      <MySettings/></section>
+      {/*<section><MyProfile/>
+      <MySettings/></section>*/}
 		</div>
 	);
 }
