@@ -34,7 +34,8 @@ function App() {
 				<MyFooter />
 			</footer>
       {/*<section><MyProfile/>
-      <MySettings/></section>*/}
+      <MySettings/></section>
+      Queste due sezioni sono parziali, ho fatto solo il layout.*/}
 		</div>
 	);
 }
