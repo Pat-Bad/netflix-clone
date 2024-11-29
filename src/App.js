@@ -12,10 +12,10 @@ import MySeries from "./Components/MySeries";
 function App() {
 	return (
 		<div className="App">
-			<header className="App-header">
+			<header className="App-header)">
 				<MyNavbar />
 			</header>
-			<main className="bg-dark">
+			<main className="Sage">
       <Container>
         <Row>
         <MyMainContent />

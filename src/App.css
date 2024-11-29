@@ -13,8 +13,6 @@
 	}
 }
 
-
-
 .App-link {
 	color: #61dafb;
 }
@@ -28,10 +26,9 @@
 	}
 }
 
-
-.CardStyle {
-	min-height: 100%;
-	min-width:100%;
-	overflow: auto;
-	
+.Sage{
+	background-color:rgba(208,224,198,255);
 }
+
+.Pumpkin-latte {
+	background-color:rgba(139,168,137,255)}

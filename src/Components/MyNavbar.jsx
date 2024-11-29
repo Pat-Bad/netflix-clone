@@ -5,8 +5,8 @@ const MyNavbar = function () {
 		<Navbar
 			collapseOnSelect
 			expand="md"
-			className="bg-dark align-items-start pb-5"
-			data-bs-theme="dark"
+			className="Sage align-items-start pb-5"
+			data-bs-theme="light"
 		>
 			<Container fluid>
 				<Navbar.Brand href="#home">Netflix</Navbar.Brand>
