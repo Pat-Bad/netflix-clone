@@ -7,10 +7,10 @@ const MyFooter = function () {
 			
             data-bs-theme="dark"
 		>
-			<ListGroup.Item>Contact Us</ListGroup.Item>
-			<ListGroup.Item>Work with Us</ListGroup.Item>
-			<ListGroup.Item>Where we are</ListGroup.Item>
-			<ListGroup.Item>Legal notes</ListGroup.Item>
+			<ListGroup.Item action variant="success">Contact Us</ListGroup.Item>
+			<ListGroup.Item action variant="success">Work with Us</ListGroup.Item>
+			<ListGroup.Item action variant="success">Where we are</ListGroup.Item>
+			<ListGroup.Item action variant="success">Legal notes</ListGroup.Item>
 		</ListGroup>
 	);
 };
