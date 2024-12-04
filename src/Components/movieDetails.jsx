@@ -31,13 +31,15 @@ const MovieDetails = () => {
       });
   };
 
-  const findTheRightMovie = () => {
-    movie.find((movie) => {
-      return movie.imdbID.toString() === params.movieId;
-    });
+  const findTheRightMovie = movie.find((movie) => {
+    return movie.imdbID.toString() === params.movieId;
+  });
 
-    console.log(findTheRightMovie);
-  };
+  if (findTheRighMovie) {
+    setMovie(movie);
+  } else {
+    console.log("Errore");
+  }
 };
 
 export default MovieDetails;
