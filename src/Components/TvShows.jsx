@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { Card, Button } from "react-bootstrap";
 
-const url = "http://www.omdbapi.com/?i=tt3896198&apikey=d901781a&s=theOffice";
+const url =
+  "http://www.omdbapi.com/?i=tt3896198&apikey=d901781a&s=Harry Potter";
 
 const TvShows = () => {
   const [tvShow, setTvShow] = useState([]);
@@ -20,6 +21,7 @@ const TvShows = () => {
         }
       })
       .then((tvShow) => {
+        console.log(tvShow);
         setTvShow(tvShow.Search);
       })
       .catch((err) => {

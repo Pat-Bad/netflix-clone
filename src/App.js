@@ -10,6 +10,7 @@ import MySeries from "./Components/MySeries";
 
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import TvShows from "./Components/TvShows";
+import MovieDetails from "./Components/movieDetails";
 
 function App() {
   return (
@@ -24,16 +25,22 @@ function App() {
               <Route
                 path="/TvShows"
                 element={
-                  <Row>
-                    <Col>
+                  <Row className="d-flex flex-wrap">
+                    <Col
+                      xs={12}
+                      md={4}
+                      lg={3}
+                      className="d-flex flex-wrap"
+                    >
                       <TvShows />
                     </Col>
                   </Row>
                 }
               />
+
               <Route
-                path="/MyMainContent"
-                elemnent={
+                path="/"
+                element={
                   <>
                     <Row>
                       <MyMainContent />
@@ -53,8 +60,12 @@ function App() {
                 }
               />
               <Route
-                path="/movieDetails/:movieId"
-                element={<movieDetails />}
+                path="/MovieDetails/:movieId"
+                element={
+                  <Row>
+                    <MovieDetails />
+                  </Row>
+                }
               />
             </Routes>
           </Container>

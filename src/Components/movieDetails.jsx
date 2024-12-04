@@ -1,1 +1,5 @@
-import { useParams } from "react-router-dom";
+const MovieDetails = () => {
+  return "ciaociao";
+};
+
+export default MovieDetails;
