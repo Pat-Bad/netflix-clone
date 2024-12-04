@@ -1,19 +1,20 @@
 import { useParams } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { Card, Button } from "react-bootstrap";
 
 const MovieDetails = () => {
   const params = useParams();
 
   const url =
-    "http://www.omdbapi.com/?i=tt3896198&apikey=d901781a" + params.imdbID; //devo usare i parametri
+    "http://www.omdbapi.com/?i=tt3896198&apikey=d901781a&i=" + params.imdbID; //devo usare i parametri
 
-  const [movie, setMovie] = useState([]);
+  const [movie, setMovie] = useState(null);
 
   useEffect(() => {
-    getTvShowData();
-  }, []);
+    getMovieData();
+  }, [params.imdbID]);
 
-  const getTvShowData = () => {
+  const getMovieData = () => {
     fetch(url)
       .then((response) => {
         if (response.ok) {
@@ -24,21 +25,32 @@ const MovieDetails = () => {
       })
       .then((movie) => {
         console.log(movie);
-        setMovie(movie.Search);
+        setMovie(movie);
       })
       .catch((err) => {
         console.log("Errore", err);
       });
   };
 
-  const findTheRightMovie = movie.find((movie) => {
-    return movie.imdbID.toString() === params.movieId;
-  });
-
-  if (findTheRighMovie) {
-    setMovie(movie);
-  } else {
-    console.log("Errore");
+  if (movie) {
+    return (
+      <div>
+        <Card>
+          <Card.Img
+            variant="top"
+            src="holder.js/100px180"
+          />
+          <Card.Body>
+            <Card.Title>Card Title</Card.Title>
+            <Card.Text>
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </Card.Text>
+            <Button variant="primary">Go somewhere</Button>
+          </Card.Body>
+        </Card>
+      </div>
+    );
   }
 };
 
