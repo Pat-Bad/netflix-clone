@@ -5,7 +5,7 @@ const MovieDetails = () => {
   const params = useParams();
 
   const url =
-    "http://www.omdbapi.com/?i=tt3896198&apikey=d901781a&s=Harry Potter"; //devo usare i parametri
+   //devo usare i parametri
 
   const [movie, setMovie] = useState([]);
 
